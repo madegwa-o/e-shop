@@ -1,0 +1,321 @@
+/* Root Variables */
+:root {
+    --primary-blue: #475cb3; /* Blue for primary buttons */
+    --dark-blue: #0056b3;    /* Dark blue for hover effects */
+    --light-blue: #85d7ff;   /* Light blue for accents */
+    --accent-yellow: #FFC107; /* Yellow for highlighting */
+    --white: #FFFFFF;        /* White for background */
+    --gray-light: #F8F9FA;   /* Light gray for sections */
+    --text-dark: #343A40;    /* Dark text for readability */
+    --background-opacity: rgba(0, 0, 0, 0.5); /* Overlay effect */
+    --primary-green:  #343A40;
+    --dark-green: #343A40;
+}
+/* Custom Scrollbar */
+/* Ensure content is below header */
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    z-index: -1; /* This ensures the scrollbar is rendered behind the header */
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light background for the scrollbar track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-blue); /* Darker green for the scrollbar thumb */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue); /* Darker shade when hovered */
+}
+
+/* For Firefox */
+scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+scrollbar-thumb {
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+scrollbar-thumb:hover {
+    background-color: var(--dark-blue);
+}
+
+scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--white), var(--light-blue));
+    color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    height: 40px;
+    width: 40px;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-right: 30px;
+}
+
+.navLink, .loginButton {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.navLink:hover, .loginButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logoutButton {
+    background: none;
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+    background-color: #d94446;
+}
+
+.container {
+    z-index: 0; /* Ensure the container and the scrollbar are below the header */
+}
+
+/* Main Container */
+.container {
+    background-image: url("shop-home.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    overflow: hidden;
+    text-align: center;
+    padding-top: 80px; /* Account for fixed header */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background: var(--background-opacity);
+    padding: 40px;
+}
+
+.tagline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--light-blue);
+}
+
+.ctaButton {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 20px;
+    background: var(--white);
+    color: var(--text-dark);
+}
+
+.section:nth-child(even) {
+    background: var(--gray-light);
+}
+
+.section h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.section p,
+.section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section li {
+    margin: 10px 0;
+}
+
+/* Social Media Links */
+.socialLinks {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.socialLinks a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+    color: var(--dark-blue);
+}
+
+/* Product Grid */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.productCard {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.productTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.productPrice {
+    font-size: 1rem;
+    color: var(--primary-blue);
+    margin: 10px 0;
+}
+
+.addToCartButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addToCartButton:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .tagline {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .ctaButton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .nav {
+        gap: 0.5rem;
+    }
+
+    .productGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
